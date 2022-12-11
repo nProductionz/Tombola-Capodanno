@@ -11,9 +11,14 @@ def main():
     while(count <= 20):
         strName = "lista"+str(count)+".txt"
         e = open(strName, "w+")
-        for i in range(10):    
+        array = []
+        frs = 0
+        while frs < 10:  
             temp = random.choice(righe)
-            e.write(temp+"\n")
+            if temp not in array:
+                array.append(temp)
+                e.write(temp+"\n")
+                frs += 1
         count+=1
 
 main()
